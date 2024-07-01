@@ -271,13 +271,14 @@ if __name__ == "__main__":
     argparser.add_argument("--num_frames", type=int, default=16)
     argparser.add_argument("--load-8bit", action="store_true")
     argparser.add_argument("--load-4bit", action="store_true")
+    argparser.add_argument("--cache-dir", type=str, default=None)
     argparser.add_argument("--debug", action="store_true")
     
     args = argparser.parse_args()
     model_path = args.model_path
     filt_invalid="cut"
     model_name = get_model_name_from_path(args.model_path)
-    tokenizer, model, image_processor, context_len = load_pretrained_model(args.model_path, args.model_base, model_name, args.load_8bit, args.load_4bit)
+    tokenizer, model, image_processor, context_len = load_pretrained_model(args.model_path, args.model_base, model_name, args.load_8bit, args.load_4bit, cache_dir=args.cache_dir)
     our_chatbot = None
     # import pdb;pdb.set_trace()
     try:
