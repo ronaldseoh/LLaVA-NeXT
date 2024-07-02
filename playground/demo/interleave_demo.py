@@ -282,8 +282,8 @@ if __name__ == "__main__":
     our_chatbot = None
     # import pdb;pdb.set_trace()
     try:
-        demo.launch(server_name=args.server_name, server_port=int(args.port),share=True)
+        demo.launch(server_name=args.server_name, server_port=int(args.port),share=False)
     except Exception as e:
         args.port=int(args.port)+1
         print(f"Port {args.port} is occupied, try port {args.port}")
-        demo.launch(server_name=args.server_name, server_port=int(args.port),share=True)
+        demo.launch(server_name=args.server_name, server_port=int(args.port),share=False)
