@@ -278,7 +278,7 @@ if __name__ == "__main__":
     model_path = args.model_path
     filt_invalid="cut"
     model_name = get_model_name_from_path(args.model_path)
-    tokenizer, model, image_processor, context_len = load_pretrained_model(args.model_path, args.model_base, model_name, args.load_8bit, args.load_4bit, cache_dir=args.cache_dir)
+    tokenizer, model, image_processor, context_len = load_pretrained_model(args.model_path, args.model_base, model_name, args.load_8bit, args.load_4bit, attn_implementation=None, cache_dir=args.cache_dir)
     our_chatbot = None
     # import pdb;pdb.set_trace()
     try:
