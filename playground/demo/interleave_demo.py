@@ -97,7 +97,7 @@ def load_image(image_file):
 
 
 def clear_history(history):
-
+    global our_chatbot
     our_chatbot.conversation = conv_templates[our_chatbot.conv_mode].copy()
 
     return None
