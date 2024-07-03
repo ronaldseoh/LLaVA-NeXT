@@ -180,7 +180,7 @@ def bot(history):
     streamer = TextStreamer(our_chatbot.tokenizer, skip_prompt=True, skip_special_tokens=True)
     # import pdb;pdb.set_trace()
     with torch.inference_mode():
-        output_ids = our_chatbot.model.generate(input_ids, images=image_tensor, do_sample=True, temperature=0, max_new_tokens=1024, streamer=streamer, use_cache=False, stopping_criteria=[stopping_criteria])
+        output_ids = our_chatbot.model.generate(input_ids, images=image_tensor, do_sample=False, temperature=0, max_new_tokens=1024, streamer=streamer, use_cache=False, stopping_criteria=[stopping_criteria])
 
     outputs = our_chatbot.tokenizer.decode(output_ids[0]).strip()
     if outputs.endswith(stop_str):
