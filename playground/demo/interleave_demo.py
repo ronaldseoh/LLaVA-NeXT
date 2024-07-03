@@ -98,9 +98,12 @@ def load_image(image_file):
 
 def clear_history(history):
     global our_chatbot
-    our_chatbot.conversation = conv_templates[our_chatbot.conv_mode].copy()
+
+    if our_chatbot is not None:
+        our_chatbot.conversation = conv_templates[our_chatbot.conv_mode].copy()
 
     return None
+
 def clear_response(history):
     for index_conv in range(1, len(history)):
         # loop until get a text response from our model.
